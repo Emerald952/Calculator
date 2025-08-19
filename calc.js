@@ -1,6 +1,8 @@
 const numKey = document.querySelectorAll('.num');
 const opKey = document.querySelectorAll('.op');
 const equal = document.querySelector('.eq');
+const clear = document.querySelector('.clr');
+const bkspc = document.querySelector('.bkspc');
 const inp = document.getElementById('userInp');
 
 function isOperator(ch){
@@ -46,6 +48,21 @@ equal.addEventListener('click', function(){
     }
     else{
         inp.value = evaluateExp(currInp);
+    }
+})
+
+clear.addEventListener('click', function(){
+    inp.value='';
+})
+
+bkspc.addEventListener('click', function(){
+    let currInp = inp.value.trim();
+    if(!currInp){
+        return;
+    }
+    else{
+        currInp= currInp.slice(0,-1);
+        inp.value = currInp;
     }
 })
 
