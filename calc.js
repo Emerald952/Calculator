@@ -26,14 +26,21 @@ function precedence(op){
 
 numKey.forEach(function(key){
     key.addEventListener('click', function(){
-        inp.value += key.textContent;
+        if(inp.value == "Cannot Divide By Zero!" || inp.value == "Invalid Operator"){
+            inp.value=key.textContent;
+        }else{
+            inp.value += key.textContent;
+        }
     })
 })
 
 opKey.forEach(function(op){
     op.addEventListener('click', function(){
         const currInp = inp.value.trim();
-        if(currInp && !isOperator(currInp[currInp.length - 1])){
+        if(currInp && (currInp == "Cannot Divide By Zero!" || currInp == "Invalid Operator")){
+            inp.value='';
+        }
+        else if(currInp && !isOperator(currInp[currInp.length - 1])){
             inp.value += ` ${op.textContent} `;
         }else{
             return;
@@ -57,7 +64,8 @@ clear.addEventListener('click', function(){
 
 bkspc.addEventListener('click', function(){
     let currInp = inp.value.trim();
-    if(!currInp){
+    if(!currInp || currInp == "Cannot Divide By Zero!" || currInp == "Invalid Operator"){
+        inp.value = '';
         return;
     }
     else{
