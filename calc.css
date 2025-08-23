@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  
+}
+#calc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px; 
+    width: 300px;
+    height: 460px;
+    background-color: silver; 
+}
+#keyPad{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#userInp{
+    width: 100%;
+    height: 50px;
+    background-color: pink;
+    text-align: right;
+    border: none;
+    border-radius: 5px;
+}
+#top-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+#keys{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+button{
+    width: 50px;
+    height: 50px;
+}
+
+.bkspc{
+    width: auto;
+}
+
+#operand{
+    width: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#operator{
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
